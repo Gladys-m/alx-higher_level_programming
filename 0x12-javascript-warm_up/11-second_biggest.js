@@ -1,12 +1,22 @@
 #!/usr/bin/node
 
-const args = process.argv.slice(2).map(Number);
+const args = process.argv.slice(2);
 const len = args.length;
 
 if (len < 2) {
   console.log(0);
 } else {
-  const sortedArgs = args.sort((a, b) => a - b);
-  const secondSmallest = sortedArgs[1];
-  console.log(secondSmallest);
+  let largest = -Infinity;
+  let secondLargest = -Infinity;
+  for (let i = 0; i < len; i++) {
+    const current = parseInt(args[i]);
+    if (current > largest) {
+      secondLargest = largest;
+      largest = current;
+    } else if (current > secondLargest) {
+      secondLargest = current;
+    }
+  }
+
+  console.log(secondLargest);
 }
