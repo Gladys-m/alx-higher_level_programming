@@ -9,4 +9,5 @@ if (!num) {
 } else {
   for (let i = 0; i < num; i++) {
     console.log(line);
+  }
 }
