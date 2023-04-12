@@ -8,14 +8,14 @@ class Rectangle {
     }
   }
 
-  print() {
-    let letter = 'X';
+  print () {
+    const letter = 'X';
     for (let i = 0; i < this.height; i++) {
       let sqr = '';
       for (let j = 0; j < this.width; j++) {
         sqr += letter;
       }
-    console.log(sqr);
+      console.log(sqr);
     }
   }
 }
