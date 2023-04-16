@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-All states via SQLAlchemy
+Contains a
 """
 import sys
 from model_state import Base, State
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).order_by(State.id)
+    query = session.query(State).filter(State.name.like('%a%'))
     records = query.all()
 
     for record in records:
